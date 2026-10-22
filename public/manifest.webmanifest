@@ -1,0 +1,19 @@
+{
+  "name": "RuralAttend | Rural School Attendance",
+  "short_name": "RuralAttend",
+  "description": "Offline-friendly attendance and school management for rural schools.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f7f7",
+  "theme_color": "#142f42",
+  "icons": [
+    {
+      "src": "/ruralattend-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

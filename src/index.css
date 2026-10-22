@@ -1,0 +1,7 @@
+:root{font-family:var(--body);color:var(--ink);background:var(--canvas);font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-optical-sizing:auto;--canvas:#f4f7f7;--ink:#263f4d;--navy:#142f42;--teal:#2f8b6d;--line:#e3e9ea;--body:'Trebuchet MS',Arial,sans-serif;--display:Georgia,'Times New Roman',serif;--mono:'Courier New',monospace}
+*{box-sizing:border-box}
+body{margin:0;min-width:320px;min-height:100vh}
+button,input,select{font:inherit}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #2a9272;outline-offset:2px}
+::selection{background:#cce8dc;color:#183b4a}
+#root{min-height:100vh}

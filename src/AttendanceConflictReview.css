@@ -1,0 +1,10 @@
+.conflict-review{display:grid;gap:12px;margin:14px 0;padding:16px;border-color:#e4c58b;background:#fffdf8}
+.conflict-review .section-heading{margin:0}
+.conflict-review .section-kicker{display:flex;align-items:center;gap:6px;color:#956c24}
+.conflict-review h2{font-size:16px}
+.conflict-review>p{margin:0;color:#65767b;font-size:12px;line-height:1.55}
+.conflict-review .table-scroll{max-height:260px}
+.conflict-review .conflict-revision{font-weight:650;color:#354e53}
+.conflict-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.conflict-success{color:#23714e!important}
+@media(max-width:520px){.conflict-review{padding:12px}.conflict-actions>*{flex:1 1 100%;justify-content:center}}

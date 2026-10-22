@@ -1,0 +1,4 @@
+html[lang='hi'] {
+  --body: 'Noto Sans Devanagari', 'Trebuchet MS', Arial, sans-serif;
+  --display: 'Noto Sans Devanagari', Georgia, serif;
+}

@@ -1,0 +1,387 @@
+/* =========================================
+   RURALATTEND — GLOBAL DESIGN SYSTEM
+   Premium UI foundation for the entire app
+   ========================================= */
+
+:root {
+  /* Brand colors */
+  --color-primary: #3157d5;
+  --color-primary-hover: #2446b8;
+  --color-primary-soft: #edf2ff;
+
+  --color-accent: #0d9b83;
+  --color-accent-soft: #e5f7f2;
+
+  /* Backgrounds */
+  --color-background: #f6f8fc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8faff;
+
+  /* Text */
+  --color-text: #172033;
+  --color-text-secondary: #667085;
+  --color-text-muted: #98a2b3;
+
+  /* Borders and states */
+  --color-border: #e6eaf2;
+  --color-success: #16845b;
+  --color-success-soft: #e8f7ef;
+  --color-warning: #b7791f;
+  --color-warning-soft: #fff6df;
+  --color-danger: #d14343;
+  --color-danger-soft: #fff0f0;
+  --color-info: #2877c7;
+  --color-info-soft: #eaf4ff;
+
+  /* Typography */
+  --font-family: Inter, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* Rounded corners */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgb(23 32 51 / 4%);
+  --shadow-md: 0 8px 24px rgb(23 32 51 / 6%);
+  --shadow-lg: 0 16px 48px rgb(23 32 51 / 10%);
+
+  /* Animation */
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 160ms;
+  --duration-normal: 240ms;
+  --duration-slow: 380ms;
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --header-height: 72px;
+  --content-max-width: 1600px;
+}
+
+/* ---------- Base reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+::selection {
+  background: #dce6ff;
+  color: #172033;
+}
+
+/* ---------- Accessible focus states ---------- */
+
+:focus-visible {
+  outline: 3px solid rgb(49 87 213 / 45%);
+  outline-offset: 3px;
+}
+
+input,
+select,
+textarea {
+  color: var(--color-text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ---------- Reusable layout helpers ---------- */
+
+.container {
+  width: min(100% - 32px, var(--content-max-width));
+  margin-inline: auto;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-muted {
+  color: var(--color-text-secondary);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.surface {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Shared transitions ---------- */
+
+.interactive {
+  transition:
+    color var(--duration-normal) var(--ease-standard),
+    background-color var(--duration-normal) var(--ease-standard),
+    border-color var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+/* ---------- Animation utilities ---------- */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in var(--duration-slow) var(--ease-standard) both;
+}
+
+.animate-slide-up {
+  animation: slide-up var(--duration-slow) var(--ease-standard) both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right var(--duration-slow) var(--ease-standard) both;
+}
+
+.animate-scale-in {
+  animation: scale-in var(--duration-normal) var(--ease-standard) both;
+}
+
+/* ---------- Loading skeleton ---------- */
+
+.skeleton {
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    #edf0f6 25%,
+    #f7f8fb 50%,
+    #edf0f6 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+/* ---------- Scrollbars ---------- */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd3e1 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd3e1;
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9aa7bd;
+}
+
+/* ---------- Responsive foundations ---------- */
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+    --space-8: 1.5rem;
+    --space-10: 2rem;
+    --space-12: 2.25rem;
+  }
+
+  .container {
+    width: min(100% - 24px, var(--content-max-width));
+  }
+}
+
+/* ---------- Reduced motion accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
